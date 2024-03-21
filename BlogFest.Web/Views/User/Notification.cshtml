@@ -1,0 +1,15 @@
+﻿@using BlogFest.Application.Services.Users.DTOs;
+@model List<NotificationDTO>
+@{
+    Layout = "_ContentLayout";
+}
+<div class="col-lg-6">
+    @foreach (var item in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                @Html.Raw(@item.Message)
+            </div>
+        </div>
+    }
+</div>

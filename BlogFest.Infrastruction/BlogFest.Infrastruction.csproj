@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ImageResizer\" />
+    <Folder Include="Persistance\AutoMapper\" />
+    <Folder Include="Authentication\" />
+    <!-- <Folder Include="Persistance\SQL_Scripts\Triggers\AddTriggers.sql" /> -->
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Persistance\SQL_Scripts\**" CopyToOutputDirectory="Always" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.22.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.25" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
+	<PackageReference Include="Dapper" Version="2.1.28" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.25">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="SlugGenerator" Version="2.0.2" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BlogFest.Application\BlogFest.Application.csproj" />
+	  <ProjectReference Include="..\BlogFest.Domain\BlogFest.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

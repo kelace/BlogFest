@@ -1,0 +1,36 @@
+﻿@using BlogFest.Web.ViewModels.Administration;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var tab = ViewData["Tab"];
+}
+
+@section Styles {
+    @await RenderSectionAsync("Styles", false)
+
+    <style>
+            a {
+                cursor: pointer
+            }
+    </style>
+}
+
+<ul class="nav nav-pills mb-4">
+
+    <li class="nav-item">
+        <a class="nav-link @(tab == "Users" ? "active" : "")" asp-controller="Administration" asp-action="Index">Users</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link @( tab == "Categories" ? "active" : "")" asp-controller="Administration" asp-action="Categories">Categories</a>
+    </li>
+</ul>
+
+
+
+@RenderBody()
+@section Scripts{
+
+    @await RenderSectionAsync("Scripts", false)
+}

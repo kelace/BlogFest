@@ -1,0 +1,145 @@
+﻿@using BlogFest.Domain.Content;
+@using BlogFest.Application.Services.Users.DTOs;
+@model UserPageDTO;
+
+@{
+    Layout = "_ContentLayout";
+}
+
+@{
+    var pages = (int)Math.Ceiling((decimal)Model.CommonAmount / (decimal)3.0);
+}
+
+<style>
+    img{
+        max-width:100%
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="\media\@Model.User.Path" />
+            </div>
+            <div class="col-lg-9">
+                <h2>
+                    @Model.User.Name
+                </h2>
+                <div>
+                    @if (!string.IsNullOrEmpty(Model.User.Bio))
+                    {
+                        <p>
+                            <b>Bio:</b> @Model.User.Bio
+                        </p>
+                    }    
+                </div>
+
+
+            </div>
+        </div>
+
+        @if (Model.IsUserAccount)
+        {
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills nav-fill">
+
+                        <li class="nav-item text-end">
+                            <a asp-controller="Post" asp-action="CreatePost" class="btn btn-primary">Create Post</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-lg-12">
+        <div class="list-group">
+            @if (Model.Posts != null)
+            {
+                for (int i = 0; i < Model.Posts.Count; i++)
+                {
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="\media\@Model.Posts[i].ImagePath" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="d-flex justify-content-between">
+
+                                        <a href="@Url.Action("GetBySlug", "Post", new {Slug = Model.Posts[i].Slug })">
+                                            <h3 class="title">
+                                                @Model.Posts[i].Title
+
+                                            </h3>
+                                        </a>
+
+                                        <div>
+
+                                            @if (Model.Posts[i].Status == PostStatus.Draft)
+                                            {
+                                                <span class="badge rounded-pill bg-secondary">@Model.Posts[i].Status</span>
+                                            }
+
+                                            @if (Model.Posts[i].Status == PostStatus.Published)
+                                            {
+                                                <span class="badge rounded-pill bg-success">@Model.Posts[i].Status</span>
+                                            }
+
+                                            @if (Model.Posts[i].Status == PostStatus.Hidden)
+                                            {
+                                                <span class="badge rounded-pill bg-dark">@Model.Posts[i].Status</span>
+                                            }
+
+                                            @if (Model.IsUserAccount)
+                                            {
+                                                <a href="@Url.Action("EditPost", "Post", new {slug = Model.Posts[i].Slug })">
+                                                    Edit
+                                                </a>
+                                            }
+
+                                        </div>
+                                    </div>
+                                    <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> @Model.Posts[i].DateCreated.ToString("dddd, dd MMMM yyyy")</p>
+                                    <p>@Model.Posts[i].Text</p>
+
+                                    <p class="text-muted">Presented by @Model.User.Name</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            }
+            @if (Model.Posts.Count != 0 && pages > 1)
+            {
+                <nav aria-label="...">
+                    <ul class="pagination">
+
+                        @for (var i = 1; i <= pages; i++)
+                        {
+                            @if (i == Model.Page)
+                            {
+
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">@i</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="page-item"><a class="page-link" href="@Url.Action(Model.IsUserAccount ? "MainUserPage" : "IndexByName", new {page = i})">@i</a></li>
+                            }
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+
+</div>
