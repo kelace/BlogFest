@@ -1,0 +1,45 @@
+﻿@using BlogFest.Application.Services.Content.Queries.DTOs;
+@model PostCommentsDTO
+
+<div class="comments">
+	<input asp-for="Offset" value="@Model.Offset" type="hidden" />
+
+	@if (Model.Comments != null)
+	{
+		@foreach (var item in Model.Comments)
+		{
+
+			<div class="card mb-4">
+				<div class="card-body">
+					<div class="d-flex flex-start mb-3">
+
+						<img class="rounded-circle shadow-1-strong me-3"
+							 src="\media\@item.Path" alt="avatar" width="65"
+							 height="65" />
+						<div class="flex-grow-1 flex-shrink-1">
+							<div>
+								<div class="d-flex justify-content-between align-items-center">
+									<p class="mb-1">
+										<a href="@Url.Action("Index","User", new {Id = item.UserId})">@item.UserName</a>  <span class="small">- @item.DateCreated</span>
+									</p>
+								</div>
+								<p class="small mb-0">
+									@item.Content
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	}
+</div>
+
+@if (Math.Ceiling((float)Model.TotalAmount / Model.Offset) > 1)
+{
+	<div class="text-center">
+		<a href="post-load" class="load-comments-js">
+			Load more
+		</a>
+	</div>
+}

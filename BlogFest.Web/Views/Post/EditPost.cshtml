@@ -1,0 +1,240 @@
+﻿@using BlogFest.Domain.Content;
+@using BlogFest.Web.ViewModels.Thread;
+@using System.Web;
+@{
+ 
+    ViewData["Title"] = "Edit Post";
+}
+
+@section Styles{
+    <link href="~/lib/select2/css/select2.min.css" type="text/css" rel="stylesheet"/>
+
+}
+
+@model EditPostViewModel;
+
+
+<style>
+    #file-preview{
+/*        width:100px*/
+    }
+</style>
+
+
+<div class="container text-center mb-4">
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <div class="text-center">
+            <img id="preview-image" src="\media\@Model.ImagePath" class="img-fluid">
+        </div>
+    } else
+    {
+        <div class="text-center">
+            <img id="preview-image"  class="img-fluid">
+        </div>
+    }
+
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="EdithPost" id="EditPostForm" class="form-edit-post" method="post">
+                        <input hidden asp-for="Id" />
+
+                        <div class="form-group">
+                            <label>Preview Image:</label>
+                            <input type="file" id="file-preview" name="ImageTitle" class="form-control" /> <br />
+                            <div>
+                                <span class="text-danger field-validation-valid"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Title:</label>
+                            <input asp-for="Title" class="form-control" /> <br />
+                            <div>
+                                <span class="text-danger field-validation-valid" asp-validation-for="Title"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Text:</label>
+                            <div id="editor">
+                                @Html.Raw(@Model.ContentHTML)
+
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <select class="form-select" multiple aria-label=" select example" id="UpdateCategories" name="UpdateCategories" asp-items="Model.Categories">
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            Status:
+                            <br />
+                            @if (Model.Status != PostStatus.Draft)
+                            {
+                       
+                                @PostStatus.Hidden
+                                <input name="Status" type="radio" value="@PostStatus.Hidden"  @{if (Model.Status == PostStatus.Hidden) { <text>checked</text> } } />
+                               
+
+                     
+                                @PostStatus.Published
+                                <input name="Status" type="radio" value="@PostStatus.Published" @{if (Model.Status == PostStatus.Published) { <text>checked</text> } }  />
+                             
+                            }
+                        </div>
+
+                        <div class="form-group mt-4 text-end">
+                            <button type="submit" class="btn btn-primary js-save-form">Save</button>
+
+                            @if (Model.Status == PostStatus.Draft)
+                            {
+                                <button type="submit" class="btn btn-success js-publish-form">Publish Thread</button>
+                            }
+
+                        </div>
+
+              
+
+                    </form>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/select2/js/select2.min.js"></script>
+    <script>
+        var imageId = '';
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+        var form = $('#EditPostForm')[0];
+
+        $('.js-save-form').on('click', function(e){
+
+            e.preventDefault();
+
+            var data = new FormData(form);
+            var editor = document.querySelector('.ql-editor');
+
+            console.log(imageId);
+
+            data.append('ImageId', imageId);
+            data.append('ContentHTML', editor.innerHTML);
+            data.append('ContentText', editor.innerText);
+            data.delete('ImageTitle');
+
+            $.ajax({
+                url:"@Url.Action("EditPost")",
+                method:"put",
+                data: data,
+                processData: false,
+                contentType:false,
+                success: function(data){
+                    
+                    if(data.result){
+                         openSuccessModal(data.message);
+                         return;
+                    }
+
+                    openDangerModal(data.message.description);
+                    
+                },
+                error:function(data){
+                    if(data.status == 400 ) {
+                        openDangerModal(data.responseJSON.htmlError);
+                        return;
+                    }
+
+                    openDefaultDangerModal();
+                }
+            });
+        });
+
+        $('#file-preview').on('change', function(){
+           debugger;
+           var file = $(this)[0].files[0];
+            $('#file-preview').val(null);
+
+           var data = new FormData();
+
+           data.append('ImageTitle', file);
+           data.append('PostId', $('#Id').val());
+            //data.append('__RequestVerificationToken', document.getElementsByName('__RequestVerificationToken')[0].value);
+
+           $.ajax({
+                method:'post',
+                url: '@Url.Action("UploadTitleImage")',
+                data: data,
+                contentType: false,
+                processData: false,
+       
+                success: function(data){
+                    console.log(data);
+                   if(data.result == false){
+                       openDangerModal(data.error.description);
+                       return;
+                   }
+
+                    $('#preview-image').attr('src', data.imageUrl);
+                    imageId = data.imageId;
+                },
+
+                error:function(data){
+                    console.log(data);
+                    openDangerModal("Something went wrong");
+                }
+           });
+        });
+
+
+        $('.js-publish-form').on('click', function (e) {
+
+            e.preventDefault();
+
+
+            if ($('.form-edit-post').validate()) {
+                $.ajax({
+                    url: '@Url.Action("PublishPost")',
+                    data: {
+                        postId: $('#Id').val(),
+                        '__RequestVerificationToken': document.getElementsByName('__RequestVerificationToken')[0].value
+                    },
+                    method: 'POST',
+                    success: function (data) {
+                        if (data.result) {
+                            alert(data.message);
+                            window.location.href = "@Url.Action("MainUserPage", "User")";
+                            return;
+                        }
+
+                        openDangerModal(data.message);
+                    },
+                    error: function (data) {
+
+                    }
+                });
+            }
+
+        });
+
+        $('#UpdateCategories').select2({
+            tags: true
+        });
+    </script>
+}
+
+                        

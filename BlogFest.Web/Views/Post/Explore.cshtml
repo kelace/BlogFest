@@ -1,0 +1,72 @@
+﻿@using System.Web;
+@using BlogFest.Application.Services.Administration.Queries.DTOs;
+@using BlogFest.Application.Services.Content.Queries.DTOs;
+@model ExplorePostsDTO
+@{
+    Layout = "_ContentLayout";
+    var pages = (int)Math.Ceiling((decimal)Model.Count / (decimal)3.0);
+}
+
+
+@if (Model.Posts != null)
+{
+    for (int i = 0; i < Model.Posts.Count; i++)
+    {
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="\media\@Model.Posts[i].ImagePath" class="img-fluid" />
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="d-flex justify-content-between">
+
+                            <a href="@Url.Action("GetBySlug", "Post", new {Slug = Model.Posts[i].Slug })">
+                                <h3 class="title">
+                                    @Model.Posts[i].Title
+
+                                </h3>
+                            </a>
+
+                        </div>
+                        <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> @Model.Posts[i].DateCreated.ToString("dddd, dd MMMM yyyy")</p>
+                        <p>@Model.Posts[i].Text</p>
+
+                        <p class="text-muted">Presented by
+                            <a href="@Url.Action("IndexByName", "User", new {name = @Model.Posts[i].UserName})">
+                                @Model.Posts[i].UserName
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@if (Model.Count != 0 && pages > 1)
+{
+    <nav aria-label="...">
+        <ul class="pagination">
+
+            @for (var i = 1; i <= pages; i++)
+            {
+                @if (i == Model.PageIndex)
+                {
+
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="@Url.Action("Explore", new {page = i})">@i</a>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+}

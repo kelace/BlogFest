@@ -1,0 +1,4 @@
+﻿@using BlogFest.Web.ViewModels.Content;
+@model ReactionViewModel
+
+<div class="btn-group"> <a class="btn btn-success btn-like-post-js" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> @(Model.Type == "Like" ? "You like it" : "") (@Model.LikesCount) </a> <a class="btn btn-danger btn-dislike-post-js" href="#"><i class="fa-solid fa-thumbs-down"></i>@(Model.Type == "Dislike" ? "You dont like it" : "") (@Model.DislikesCount)</a></div>

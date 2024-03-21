@@ -1,0 +1,29 @@
+﻿@using BlogFest.Web.ViewModels.Content
+@model List<CategorySideBarViewModel>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="">Search</h4>
+
+        <div class="input-group">
+           
+            <form class="d-flex" asp-action="Index" asp-controller="Search" method="get" style="width:100%">
+                <div class=" d-flex" style="width:100%">
+                    <input class="form-control mr-2 flex-grow-1" type="search" name="key" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div id="demo" class="">
+            <hr>
+            <div class="list-group list-group">
+                <h4 class="">Category</h4>
+
+                @foreach (var category in Model)
+                {
+                    <a asp-controller="Search" asp-action="Category" asp-route-key="@category.Title" class="list-group-item"><span class="badge bg-secondary">@category.Count</span> @category.Title</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

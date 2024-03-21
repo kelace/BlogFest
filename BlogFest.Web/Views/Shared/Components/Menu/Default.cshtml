@@ -1,0 +1,84 @@
+﻿@using BlogFest.Web.ViewModels.Menu
+@model MenuViewModel
+
+<style>
+    .notification-label{
+        position:relative;
+    }
+    .notification-count{
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BlogFest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Explore">Explore</a>
+                    </li>
+                    @if (Model.IsAuthorized)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Configuration" asp-action="Index">Configuration</a>
+                        </li>
+                    }
+
+                    @if(Model.IsAuthorized && Model.IsAdmin)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Administration" asp-action="Index">Admin</a>
+                        </li>
+                    }
+
+                    <li class="nav-item">
+                        <form class="d-flex" asp-action="Index" asp-controller="Search" method="get"> <input class="form-control mr-2" type="search" name="key" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button> </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="me-4">
+                <div class="notification-label">
+                    <a asp-action="Notification" asp-controller="User">
+                        <i class="fa-regular fa-bell"></i>
+                        @if (Model.UnreadNotificationsCount > 0)
+                        {
+                            <span class="notification-count">
+                                @Model.UnreadNotificationsCount
+                            </span>
+                        }
+                    </a>
+              
+                </div>
+                
+            </div>
+            @if (Model.IsAuthorized)
+            {
+                <a href="@Url.Action("Logout", "Authorization")">
+                    Logout
+                </a>
+            }
+
+        </div>
+    </nav>
+</header>

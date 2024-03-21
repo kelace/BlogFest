@@ -1,0 +1,57 @@
+﻿@using BlogFest.Models.Authorization
+@model RegisterUserViewModel
+
+<form asp-action="Register" id="RegisterForm" method="post">
+
+    <div class="form-group text-start">
+        <label>Name:</label>
+        <input asp-for="Name" class="form-control" /> <br />
+        <div>
+            <span class="text-danger field-validation-valid" asp-validation-for="Name"></span>
+        </div>
+    </div>
+
+    <div class="form-group text-start">
+        <label>Email:</label>
+        <input asp-for="Email" class="form-control" /> <br />
+        <div>
+            <span class="text-danger field-validation-valid" asp-validation-for="Email"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group text-start">
+        <label>Password:</label>
+        <input asp-for="Password" type="password" class="form-control" /><br />
+        <div>
+            <span class="text-danger field-validation-valid" asp-validation-for="Password"></span>
+        </div>
+    </div>
+
+    <div class="form-group mb-4 text-start">
+        <label>Confirm Password:</label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" /><br />
+        <div>
+            <span class="text-danger field-validation-valid" asp-validation-for="ConfirmPassword"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.ValidationSummary(true)
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" style="width:100%" class="btn btn-primary">Register</button>
+    </div>
+
+    <div class="form-group">
+        <p>
+            Signin </br>
+            <a asp-action="Index">
+                Already have an account?
+            </a>
+        </p>
+    </div>
+
+</form>

@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Authorization/_AuthLayout.cshtml";
+}
+
+@using BlogFest.Models.Authorization
+@model LoginUserViewModel
+
+@*@section Styles {
+    <style>
+        .form-group{
+            text-align:left
+        }
+    </style>
+}*@
+
+<section class="vh-100">
+    <div class="py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <h3 class="mb-5">Sign in</h3>
+
+                        <partial name="_PartialSignIn" />
+               
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+
+    <script>
+        $('#form-sigin').on('submit', function(e){
+            e.preventDefault();
+            
+            if(!$(this).valid()) return;
+
+            $.ajax({
+                url: '@Url.Action("SignIn")',
+                method: 'post',
+                data: $(this).serialize(),
+                success: function(data){
+                    if (data.result && data.linkRedirect != null) {
+                        //openSuccessModal(data.message)
+                        window.location.href = data.linkRedirect;
+                        return;
+                    }
+                    var form = $('#form-sigin');
+                    form.html(data.htmlResult);
+                    $.validator.unobtrusive.parse(form);
+                },
+                error:function(){
+                    openDefaultDangerModal();
+                }
+            });
+        });
+    </script>
+}
