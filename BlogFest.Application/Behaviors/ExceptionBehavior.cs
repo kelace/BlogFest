@@ -6,8 +6,8 @@ namespace BlogFest.Application.Behaviors
 {
     public class ExceptionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
-		private readonly ILogger _logger;
-        public ExceptionBehavior(ILogger logger)
+		private readonly ILogger<ExceptionBehavior<TRequest, TResponse>> _logger;
+        public ExceptionBehavior(ILogger<ExceptionBehavior<TRequest, TResponse>> logger)
         {
             _logger = logger;
         }
