@@ -8,6 +8,7 @@ Orm frameworks often do not have flexible enough functionality for modeling expr
 so it is necessary to adapt domain objects to the capabilities of the orm system.
 
 To achieve this goal, we used domain-specific events to which repositories subscribe and react to changes by modifying the database state.
+Also the model is separated into 3 pieces: data model, domain model, and representation model(dto and view models) in order to reduce coupling between infrastructure and domain layers.
 
 ## Technologies Used
 * Asp .Net Core
