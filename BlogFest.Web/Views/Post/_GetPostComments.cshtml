@@ -20,7 +20,7 @@
 							<div>
 								<div class="d-flex justify-content-between align-items-center">
 									<p class="mb-1">
-										<a href="@Url.Action("Index","User", new {Id = item.UserId})">@item.UserName</a>  <span class="small">- @item.DateCreated</span>
+										<a href="@Url.Action("IndexByName","User", new {name = item.UserName})">@item.UserName</a>  <span class="small">- @item.DateCreated</span>
 									</p>
 								</div>
 								<p class="small mb-0">
