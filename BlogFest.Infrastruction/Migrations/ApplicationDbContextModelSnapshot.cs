@@ -54,8 +54,8 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("97187791-091c-42ac-87b8-1a2f0390efda"),
-                            ConcurrencyStamp = "8bee19e2-63ba-4f2b-94ba-38a89ebd706c",
+                            Id = new Guid("3e0afaa8-f82a-4b2b-8763-c54733aa423f"),
+                            ConcurrencyStamp = "5d9cc1b3-f4e8-41e3-bb94-797ec6fe8f2d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -129,31 +129,31 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233"),
+                            Id = new Guid("f142dc98-4019-460d-a647-07c71916a596"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fa96b234-7b0e-4c4c-8190-92e3ab4b3159",
+                            ConcurrencyStamp = "121ac447-f1e4-41e2-b10e-1c524a8a3ba3",
                             Email = "",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHWwUubMt5bWsz86s/sZAGS7QmbYZgmhhGMRBBBoEzxIUsJGd1VPDsFS6/5aewYVOw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEF6KuH0DQha+5Kf+zkJKKi3v626EgGmHMr2yAYD2S9YGDsXNo81Zkw8J2380wYUGnw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "949f3b53-2928-4330-a2e5-fc95cdb1d293",
+                            SecurityStamp = "12e4e489-7294-40a2-94a5-fcf2ff1cf916",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = new Guid("f0a5d069-56f0-48d7-b5ed-15641a9ddea2"),
+                            Id = new Guid("84bcbf0f-5fa9-42d6-a043-28b438a66a88"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ae421da2-f500-4337-b8cb-950f58d59b2f",
+                            ConcurrencyStamp = "75d73fe2-0eff-4c35-b075-5f18603481ca",
                             Email = "",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "kitty",
-                            PasswordHash = "AQAAAAIAAYagAAAAECQtHuZqH1yyC//wJsr9E8uE31eNBgZTWNcI/rCrlVj1IcRlmY5Ga01+OqNLIcO/Iw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI4vinoh+ho0F4plO+UOmbLDfqLOCq5AFwhaPeqLsEkFkH1uWGSzBlRfBejlbpbRWA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8ea86e0d-6999-4db6-88ee-06fade60c6e7",
+                            SecurityStamp = "6ab55f36-fc94-425e-81aa-fea1da7b979c",
                             TwoFactorEnabled = false,
                             UserName = "kitty"
                         });
@@ -191,7 +191,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("966e8160-db6b-4dc5-a23e-13dede6fcdba"),
+                            Id = new Guid("635cba95-c664-4737-a84b-70ef45f8ccd7"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Sport",
@@ -200,7 +200,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e3ca1fca-b62e-45ed-802e-2a232896ef68"),
+                            Id = new Guid("e21d36ce-8150-4b18-843f-c4daa580f3d1"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Animals",
@@ -209,7 +209,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("641c1f2c-7c88-41f5-8a21-0ffd5b8c9277"),
+                            Id = new Guid("ca5b5e71-b89e-4e7b-8836-5b6e459a5997"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Finance",
@@ -218,7 +218,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Hobbie",
@@ -227,7 +227,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("db346df0-2549-410a-8ba7-fda72c0ab0f6"),
+                            Id = new Guid("0aab209a-ac78-4d5b-95e7-35777d0d9db3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Languages",
@@ -236,7 +236,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bc646f72-41b5-4f64-bc52-0b195395ece8"),
+                            Id = new Guid("90be5de8-b658-423a-b7c6-48acec0fa330"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Music",
@@ -245,7 +245,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7198d34a-b6a9-41a9-9710-fbfa44a523bc"),
+                            Id = new Guid("55fcaf16-fa4b-40b0-8ee5-770e2ef3a5fe"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Enabled = true,
                             EncodedTitle = "Сooking",
@@ -266,7 +266,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 40, 925, DateTimeKind.Utc).AddTicks(787));
+                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 18, 312, DateTimeKind.Utc).AddTicks(7005));
 
                     b.Property<int>("No")
                         .ValueGeneratedOnAdd()
@@ -287,51 +287,51 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("49317352-aa4b-4038-a6e5-0fde8f9f31fe"),
-                            CategoryId = new Guid("7198d34a-b6a9-41a9-9710-fbfa44a523bc"),
+                            Id = new Guid("28de7b3c-3adc-4d2c-94b0-d9d2891d04b0"),
+                            CategoryId = new Guid("55fcaf16-fa4b-40b0-8ee5-770e2ef3a5fe"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("60073bc8-d01c-4b05-bc4e-7746f1304872")
+                            PostId = new Guid("5b5264ae-b7d6-468d-ab25-7a0c6459f889")
                         },
                         new
                         {
-                            Id = new Guid("d1b4bf4c-7d77-445b-995a-cd26b7728f69"),
-                            CategoryId = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("7ec70157-dcfe-4f7a-a5e9-87b72d6cff43"),
+                            CategoryId = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("aa70031e-4667-48f2-8fd2-fc2f1a033ca0")
+                            PostId = new Guid("62a37d63-b02a-4a2b-8b27-ed42ac3e6c4c")
                         },
                         new
                         {
-                            Id = new Guid("90868567-1084-40dd-a07e-f4c90550577d"),
-                            CategoryId = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("8bdb8cce-00db-402c-8087-50e17188ca86"),
+                            CategoryId = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("ac99ee0a-daca-4927-845d-7f4b66cf103d")
+                            PostId = new Guid("a6470270-a886-4cbb-b5df-ffc779ee1dc9")
                         },
                         new
                         {
-                            Id = new Guid("6ee73c92-bcb4-43b6-9c03-83e32e255edd"),
-                            CategoryId = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("1a5a0912-37fe-4f16-ae40-d7a6fa4b7583"),
+                            CategoryId = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("92634559-ae30-436a-9690-007d5c1dc35a")
+                            PostId = new Guid("ec5f0508-ba97-471d-abae-101d885ab075")
                         },
                         new
                         {
-                            Id = new Guid("15db69fb-6b48-4bc3-bc96-1bc094b404c5"),
-                            CategoryId = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("1590f682-68b3-4062-a83e-85688c65feff"),
+                            CategoryId = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("73f1d7bb-dc4e-4f4a-aaf0-1e1cab10763f")
+                            PostId = new Guid("aac2e4e5-4372-4571-9bb7-9f3918d02013")
                         },
                         new
                         {
-                            Id = new Guid("2f2b0e83-6414-46e2-9545-6aea43c68c92"),
-                            CategoryId = new Guid("44ce310e-beea-4d0b-89c2-5e97cfcc4aae"),
+                            Id = new Guid("73d2e37f-f1ba-422b-956c-2d6de273798c"),
+                            CategoryId = new Guid("74dbe707-ab60-4fc7-84b3-c8f387beebb3"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             No = 0,
-                            PostId = new Guid("0c4014c0-4fab-4610-af7c-fcfcc935ffd6")
+                            PostId = new Guid("766b7995-dd2c-42d3-b2aa-9b75de70a818")
                         });
                 });
 
@@ -344,7 +344,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 40, 922, DateTimeKind.Utc).AddTicks(9152));
+                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 18, 310, DateTimeKind.Utc).AddTicks(9242));
 
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
@@ -365,7 +365,7 @@ namespace BlogFest.Infrastruction.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("BlogFest.Infrastruction.Persistance.DataModels.PostFileData", b =>
@@ -396,7 +396,7 @@ namespace BlogFest.Infrastruction.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("PostFiles");
+                    b.ToTable("PostFiles", (string)null);
                 });
 
             modelBuilder.Entity("BlogFest.Infrastruction.Persistance.DataModels.PostReactionData", b =>
@@ -428,7 +428,7 @@ namespace BlogFest.Infrastruction.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PostReactions");
+                    b.ToTable("PostReactions", (string)null);
                 });
 
             modelBuilder.Entity("BlogFest.Infrastruction.Persistance.DataModels.ReactionTypeData", b =>
@@ -448,7 +448,7 @@ namespace BlogFest.Infrastruction.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ReactionType");
+                    b.ToTable("ReactionType", (string)null);
 
                     b.HasData(
                         new
@@ -472,7 +472,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
-                        .HasDefaultValue(new Guid("e6576dcc-f736-41dc-8865-89e154cb13c5"));
+                        .HasDefaultValue(new Guid("d5bb19fd-b8eb-4452-aa5b-df346f21c7d7"));
 
                     b.Property<bool>("Choosed")
                         .HasColumnType("bit");
@@ -514,7 +514,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 40, 925, DateTimeKind.Utc).AddTicks(4116));
+                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 18, 312, DateTimeKind.Utc).AddTicks(9521));
 
                     b.Property<int>("No")
                         .ValueGeneratedOnAdd()
@@ -571,7 +571,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("990bed77-3ba8-40dd-a899-aed5b8b39062"),
+                            Id = new Guid("cfa390bf-0b35-4b13-9be9-5f439dd11687"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Default-Image",
                             No = 0,
@@ -580,7 +580,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d4254cd5-3474-4511-a9f1-d0d52f36e1f4"),
+                            Id = new Guid("a7efe72c-314b-4331-82cd-10dba83a2286"),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Default-image-title-preview",
                             No = 0,
@@ -606,7 +606,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 40, 924, DateTimeKind.Utc).AddTicks(4751));
+                        .HasDefaultValue(new DateTime(2024, 3, 19, 18, 19, 18, 312, DateTimeKind.Utc).AddTicks(1913));
 
                     b.Property<int>("No")
                         .ValueGeneratedOnAdd()
@@ -644,7 +644,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("60073bc8-d01c-4b05-bc4e-7746f1304872"),
+                            Id = new Guid("5b5264ae-b7d6-468d-ab25-7a0c6459f889"),
                             ContentHTML = "What Is Borscht? Borscht is a sour soup that is traditionally made with meat stock and boiled vegetables. The Ukrainian version, which features beets, is perhaps the most well known type — but varieties of borscht can be found throughout Central and Eastern Europe and Northern Asia. Borscht Ingredients These are the ingredients you’ll need to make this top-rated borscht recipe: Sausage: This Ukrainian borscht recipe starts with a pound of pork sausage. Vegetables: You’ll need beets, carrots, baking potatoes, cabbage, and an onion. Canned tomatoes: Use drained diced tomatoes and canned tomato paste. Vegetable oil: Cook the onion in oil. Water: You’ll need almost nine cups of water for this big-batch soup. Garlic: Three cloves of garlic add bold flavor. Sugar: A teaspoon of white sugar lends subtle sweetness. Seasonings: Season the borscht with salt and pepper to taste. Sour cream: Top the borscht with sour cream. Fresh herbs: Garnish the soup with fresh parsley or dill. How to Make Borscht You’ll find the full, step-by-step recipe below — but here’s a brief overview of what you can expect when you make Ukrainian borscht: Cook the sausage and set aside. Boil water, add the sausage, then add the vegetables and diced tomatoes. Cook the onion, stir in the tomato paste, and thin with water. Transfer to the pot. Add the garlic, cover, and turn off the heat. Stir in the sugar and seasonings. Ladle into bowls and garnish with sour cream and fresh herbs. Tip from recipe creator Patti: “This soup can be served vegetarian-style by omitting the sausage.” How to Store Borscht Store leftover borscht in an airtight container in the refrigerator for up to three days. Reheat in the microwave or on the stove. Can You Freeze Borscht? Yes, borscht freezes well! When you add it to your freezer-safe containers, make sure to leave an inch or two of space at the top to allow for expansion. Freeze the borscht for up to two months. Thaw in the refrigerator overnight, then reheat in the microwave or on the stove. Allrecipes Community Tips and Praise “This was the first time I've had borscht and now I see why so many people love it,” says one Allrecipes community member. “I can't believe how good it is.” “Just perfect,” raves Olechka. “Classic recipe, great taste, my favorite.” “BEST BORSCHT EVER,” according to KLaura Anderson-Bradfield. “I have made many different beet soup recipes over the years. The addition of an acidic ingredient (tomato) still allowed the beets to shine but removed the heavy, sometimes too earthy taste common to borscht.”",
                             ContentText = "What Is Borscht? Borscht is a sour soup that is traditionally made with meat stock and boiled vegetables. The Ukrainian version, which features beets, is perhaps the most well known type — but varieties of borscht can be found throughout Central and Eastern Europe and Northern Asia. Borscht Ingredients These are the ingredients you’ll need to make this top-rated borscht recipe: Sausage: This Ukrainian borscht recipe starts with a pound of pork sausage. Vegetables: You’ll need beets, carrots, baking potatoes, cabbage, and an onion. Canned tomatoes: Use drained diced tomatoes and canned tomato paste. Vegetable oil: Cook the onion in oil. Water: You’ll need almost nine cups of water for this big-batch soup. Garlic: Three cloves of garlic add bold flavor. Sugar: A teaspoon of white sugar lends subtle sweetness. Seasonings: Season the borscht with salt and pepper to taste. Sour cream: Top the borscht with sour cream. Fresh herbs: Garnish the soup with fresh parsley or dill. How to Make Borscht You’ll find the full, step-by-step recipe below — but here’s a brief overview of what you can expect when you make Ukrainian borscht: Cook the sausage and set aside. Boil water, add the sausage, then add the vegetables and diced tomatoes. Cook the onion, stir in the tomato paste, and thin with water. Transfer to the pot. Add the garlic, cover, and turn off the heat. Stir in the sugar and seasonings. Ladle into bowls and garnish with sour cream and fresh herbs. Tip from recipe creator Patti: “This soup can be served vegetarian-style by omitting the sausage.” How to Store Borscht Store leftover borscht in an airtight container in the refrigerator for up to three days. Reheat in the microwave or on the stove. Can You Freeze Borscht? Yes, borscht freezes well! When you add it to your freezer-safe containers, make sure to leave an inch or two of space at the top to allow for expansion. Freeze the borscht for up to two months. Thaw in the refrigerator overnight, then reheat in the microwave or on the stove. Allrecipes Community Tips and Praise “This was the first time I've had borscht and now I see why so many people love it,” says one Allrecipes community member. “I can't believe how good it is.” “Just perfect,” raves Olechka. “Classic recipe, great taste, my favorite.” “BEST BORSCHT EVER,” according to KLaura Anderson-Bradfield. “I have made many different beet soup recipes over the years. The addition of an acidic ingredient (tomato) still allowed the beets to shine but removed the heavy, sometimes too earthy taste common to borscht.”",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -653,11 +653,11 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "ukrainian-red-borscht-soup",
                             Title = "Ukrainian Red Borscht Soup",
                             TitleSlugify = "ukrainian-red-borscht-soup",
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596")
                         },
                         new
                         {
-                            Id = new Guid("aa70031e-4667-48f2-8fd2-fc2f1a033ca0"),
+                            Id = new Guid("62a37d63-b02a-4a2b-8b27-ed42ac3e6c4c"),
                             ContentHTML = "Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design. Diagram illustrating the components and relationships of Event Sourcing and Command Query Responsibility Segregation (CQRS) in an ASP.NET Core application. Basic CQRS Representation In this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions. Introduction to Event Sourcing Event Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state. What is CQRS? Command Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.",
                             ContentText = "Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design. Diagram illustrating the components and relationships of Event Sourcing and Command Query Responsibility Segregation (CQRS) in an ASP.NET Core application. Basic CQRS Representation In this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions. Introduction to Event Sourcing Event Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state. What is CQRS? Command Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -666,11 +666,11 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "implementing-event-sourcing",
                             Title = "Implementing Event Sourcing",
                             TitleSlugify = "implementing-event-sourcing",
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596")
                         },
                         new
                         {
-                            Id = new Guid("ac99ee0a-daca-4927-845d-7f4b66cf103d"),
+                            Id = new Guid("a6470270-a886-4cbb-b5df-ffc779ee1dc9"),
                             ContentHTML = "In this deep dive, we’ll go through the API design, starting from the basics and advancing towards the best practices that define exceptional APIs.\r\n\r\nAs a developer, you’re likely familiar with many of these concepts, but I’ll provide a detailed explanation to deepen your understanding.\r\n\r\nAPI Design: An E-commerce Example\r\nLet’s consider an API for an e-commerce platform like Shopify, which, if you’re not familiar with is a well-known e-commerce platform that allows businesses to set up online stores.\r\n\r\nIn API design, we’re concerned with defining the inputs (like product details for a new product) and outputs (like the information returned when someone queries a product) of an API.\r\n\r\n\r\nThis means that we focus on the interface rather than the low-level implementation\r\n\r\nAPI Design and CRUD:\r\nSo, the focus is mainly on defining how the CRUD operations are exposed to the user or system interacting with your e-commerce API.\r\n\r\nCRUD Stands for Create, Read, Update, Delete. These are the basic operations of any data-driven application.\r\n\r\n\r\nFor example, to add a new product (Create), you would make a POST request to /api/products where the product details are sent in the request body.\r\n\r\nTo retrieve products (Read), you need to fetch data with a GET request from /products.\r\n\r\nFor updating product information (Update), we use PUT or PATCH requests to /products/:id, where id is the id of a product we need to update.\r\n\r\nRemoving is similar to updating; we make a DELETE request to /products/:id where id is the product we need to remove (Delete).",
                             ContentText = "In this deep dive, we’ll go through the API design, starting from the basics and advancing towards the best practices that define exceptional APIs.\r\n\r\nAs a developer, you’re likely familiar with many of these concepts, but I’ll provide a detailed explanation to deepen your understanding.\r\n\r\nAPI Design: An E-commerce Example\r\nLet’s consider an API for an e-commerce platform like Shopify, which, if you’re not familiar with is a well-known e-commerce platform that allows businesses to set up online stores.\r\n\r\nIn API design, we’re concerned with defining the inputs (like product details for a new product) and outputs (like the information returned when someone queries a product) of an API.\r\n\r\n\r\nThis means that we focus on the interface rather than the low-level implementation\r\n\r\nAPI Design and CRUD:\r\nSo, the focus is mainly on defining how the CRUD operations are exposed to the user or system interacting with your e-commerce API.\r\n\r\nCRUD Stands for Create, Read, Update, Delete. These are the basic operations of any data-driven application.\r\n\r\n\r\nFor example, to add a new product (Create), you would make a POST request to /api/products where the product details are sent in the request body.\r\n\r\nTo retrieve products (Read), you need to fetch data with a GET request from /products.\r\n\r\nFor updating product information (Update), we use PUT or PATCH requests to /products/:id, where id is the id of a product we need to update.\r\n\r\nRemoving is similar to updating; we make a DELETE request to /products/:id where id is the product we need to remove (Delete).",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -679,11 +679,11 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "api-design-101-from-basics-to-best-practices",
                             Title = "API Design 101: From Basics to Best Practices",
                             TitleSlugify = "api-design-101-from-basics-to-best-practices",
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596")
                         },
                         new
                         {
-                            Id = new Guid("92634559-ae30-436a-9690-007d5c1dc35a"),
+                            Id = new Guid("ec5f0508-ba97-471d-abae-101d885ab075"),
                             ContentHTML = "Dear reader, we will not sail on the surface, we will dive into this learning experience covering the Basics, until we touch the floor. In this journey we will figure out how well we know, the basic stuff we are used to when talking about .NET C#, so here’s my question to you, as an experienced sailor:\r\n\r\nEmployee employee1 = new(1, \"Alex Villegas C\");\r\nEmployee employee2 = employee1;\r\nemployee1 = null;\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nTake your time…\r\n\r\nWhen you create Objects you’re dealing with reference types.\r\n\r\nemployee2 = employee1;\r\nSo here (above), we will pass a reference (Not a value), in other words, now both variables share the same reference to a single object. So if you modify a property of employee2 this changes employee1 as well.\r\n\r\nSo, please see here (below):\r\n\r\nemployee1 = null;\r\nIf you pass a Null value to an object, just like in the example.\r\n\r\nWhat would happen? This is a great question…\r\n\r\nIt will remove the reference between employee1 and the actual Employee object. So our variable employee1 now has no reference, but what about employee2… let me ask you again:\r\n\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nWill the employee2 variable be Null as well?\r\n\r\nIf you thought employee2 value was Null you are wrong 👀\r\nRemember, Both variables have reference types, but each individual variable is different, and if we remove the reference from the first variable, this change will not affect the 2nd one.",
                             ContentText = "Dear reader, we will not sail on the surface, we will dive into this learning experience covering the Basics, until we touch the floor. In this journey we will figure out how well we know, the basic stuff we are used to when talking about .NET C#, so here’s my question to you, as an experienced sailor:\r\n\r\nEmployee employee1 = new(1, \"Alex Villegas C\");\r\nEmployee employee2 = employee1;\r\nemployee1 = null;\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nTake your time…\r\n\r\nWhen you create Objects you’re dealing with reference types.\r\n\r\nemployee2 = employee1;\r\nSo here (above), we will pass a reference (Not a value), in other words, now both variables share the same reference to a single object. So if you modify a property of employee2 this changes employee1 as well.\r\n\r\nSo, please see here (below):\r\n\r\nemployee1 = null;\r\nIf you pass a Null value to an object, just like in the example.\r\n\r\nWhat would happen? This is a great question…\r\n\r\nIt will remove the reference between employee1 and the actual Employee object. So our variable employee1 now has no reference, but what about employee2… let me ask you again:\r\n\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nWill the employee2 variable be Null as well?\r\n\r\nIf you thought employee2 value was Null you are wrong 👀\r\nRemember, Both variables have reference types, but each individual variable is different, and if we remove the reference from the first variable, this change will not affect the 2nd one.",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -692,11 +692,11 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "net-fundamentals-for-senior-devs",
                             Title = ".NET/C# Fundamentals for Senior Devs",
                             TitleSlugify = "net-fundamentals-for-senior-devs",
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596")
                         },
                         new
                         {
-                            Id = new Guid("73f1d7bb-dc4e-4f4a-aaf0-1e1cab10763f"),
+                            Id = new Guid("aac2e4e5-4372-4571-9bb7-9f3918d02013"),
                             ContentHTML = "Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design. Diagram illustrating the components and relationships of Event Sourcing and Command Query Responsibility Segregation (CQRS) in an ASP.NET Core application. Basic CQRS Representation In this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions. Introduction to Event Sourcing Event Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state. What is CQRS? Command Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.",
                             ContentText = "Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design. Diagram illustrating the components and relationships of Event Sourcing and Command Query Responsibility Segregation (CQRS) in an ASP.NET Core application. Basic CQRS Representation In this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions. Introduction to Event Sourcing Event Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state. What is CQRS? Command Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -705,11 +705,11 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "implementing-event-sourcing-2",
                             Title = "Implementing Event Sourcing",
                             TitleSlugify = "implementing-event-sourcing",
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596")
                         },
                         new
                         {
-                            Id = new Guid("0c4014c0-4fab-4610-af7c-fcfcc935ffd6"),
+                            Id = new Guid("766b7995-dd2c-42d3-b2aa-9b75de70a818"),
                             ContentHTML = "Dear reader, we will not sail on the surface, we will dive into this learning experience covering the Basics, until we touch the floor. In this journey we will figure out how well we know, the basic stuff we are used to when talking about .NET C#, so here’s my question to you, as an experienced sailor:\r\n\r\nEmployee employee1 = new(1, \"Alex Villegas C\");\r\nEmployee employee2 = employee1;\r\nemployee1 = null;\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nTake your time…\r\n\r\nWhen you create Objects you’re dealing with reference types.\r\n\r\nemployee2 = employee1;\r\nSo here (above), we will pass a reference (Not a value), in other words, now both variables share the same reference to a single object. So if you modify a property of employee2 this changes employee1 as well.\r\n\r\nSo, please see here (below):\r\n\r\nemployee1 = null;\r\nIf you pass a Null value to an object, just like in the example.\r\n\r\nWhat would happen? This is a great question…\r\n\r\nIt will remove the reference between employee1 and the actual Employee object. So our variable employee1 now has no reference, but what about employee2… let me ask you again:\r\n\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nWill the employee2 variable be Null as well?\r\n\r\nIf you thought employee2 value was Null you are wrong 👀\r\nRemember, Both variables have reference types, but each individual variable is different, and if we remove the reference from the first variable, this change will not affect the 2nd one.",
                             ContentText = "Dear reader, we will not sail on the surface, we will dive into this learning experience covering the Basics, until we touch the floor. In this journey we will figure out how well we know, the basic stuff we are used to when talking about .NET C#, so here’s my question to you, as an experienced sailor:\r\n\r\nEmployee employee1 = new(1, \"Alex Villegas C\");\r\nEmployee employee2 = employee1;\r\nemployee1 = null;\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nTake your time…\r\n\r\nWhen you create Objects you’re dealing with reference types.\r\n\r\nemployee2 = employee1;\r\nSo here (above), we will pass a reference (Not a value), in other words, now both variables share the same reference to a single object. So if you modify a property of employee2 this changes employee1 as well.\r\n\r\nSo, please see here (below):\r\n\r\nemployee1 = null;\r\nIf you pass a Null value to an object, just like in the example.\r\n\r\nWhat would happen? This is a great question…\r\n\r\nIt will remove the reference between employee1 and the actual Employee object. So our variable employee1 now has no reference, but what about employee2… let me ask you again:\r\n\r\nWhat do you think would be the value of the employee2 variable at the end of this execution?\r\n\r\nWill the employee2 variable be Null as well?\r\n\r\nIf you thought employee2 value was Null you are wrong 👀\r\nRemember, Both variables have reference types, but each individual variable is different, and if we remove the reference from the first variable, this change will not affect the 2nd one.",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -718,7 +718,7 @@ namespace BlogFest.Infrastruction.Migrations
                             Slug = "the-architecture-of-a-modern-startup",
                             Title = "The Architecture of a Modern Startup",
                             TitleSlugify = "the-architecture-of-a-modern-startup",
-                            UserId = new Guid("f0a5d069-56f0-48d7-b5ed-15641a9ddea2")
+                            UserId = new Guid("84bcbf0f-5fa9-42d6-a043-28b438a66a88")
                         });
                 });
 
@@ -727,7 +727,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
-                        .HasDefaultValue(new Guid("ddeb5501-21a3-46a2-b9be-83e085f084b1"));
+                        .HasDefaultValue(new Guid("cd6bf86c-5b4e-4fba-b4e8-f0c4a9897448"));
 
                     b.Property<bool>("Active")
                         .ValueGeneratedOnAdd()
@@ -773,7 +773,7 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233"),
+                            Id = new Guid("f142dc98-4019-460d-a647-07c71916a596"),
                             Active = true,
                             Bio = "Administrator of this wonderful site. I’m also a .net developer and write about clean architecture, domain driven design.",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -787,7 +787,7 @@ namespace BlogFest.Infrastruction.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f0a5d069-56f0-48d7-b5ed-15641a9ddea2"),
+                            Id = new Guid("84bcbf0f-5fa9-42d6-a043-28b438a66a88"),
                             Active = true,
                             Bio = "I am Martin Fowler: an author, speaker… essentially a loud-mouthed pundit on the topic of software development, primarily for Enterprise Applications",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -887,8 +887,8 @@ namespace BlogFest.Infrastruction.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("77d7bb4f-6f0b-46e8-8b90-9cf0a01cf233"),
-                            RoleId = new Guid("97187791-091c-42ac-87b8-1a2f0390efda")
+                            UserId = new Guid("f142dc98-4019-460d-a647-07c71916a596"),
+                            RoleId = new Guid("3e0afaa8-f82a-4b2b-8763-c54733aa423f")
                         });
                 });
 
