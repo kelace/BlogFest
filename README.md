@@ -28,6 +28,5 @@ If you want to check authentication scenario then pass sengrid api key into apps
   }
 ```
 Otherwise you can use the following credentials:
-* login: admin;
-password: jVKhpWN2rRkb   
+* login: admin; password: jVKhpWN2rRkb   
 * login: marty; password: jVKhpWN2rRkb
