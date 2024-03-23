@@ -60,6 +60,7 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedCategory(builder, new CategoryDataModel
 			{
+				Id = new Guid("635CBA95-C664-4737-A84B-70EF45F8CCD7"),
 				Title = "Sport",
 				EncodedTitle = "Sport",
 				Enabled = true,
@@ -67,53 +68,60 @@ namespace BlogFest.Infrastructure.Persistance
 			
 			SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Animals",
+                Id = new Guid("E21D36CE-8150-4B18-843F-C4DAA580F3D1"),
+                Title = "Animals",
 				EncodedTitle = "Animals",
 				Enabled = true,
 			});			
 			
 			SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Finance",
+                Id = new Guid("CA5B5E71-B89E-4E7B-8836-5B6E459A5997"),
+                Title = "Finance",
 				EncodedTitle = "Finance",
 				Enabled = true,
 			});		
 			
 			var hobbieCatId = SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Hobbie",
+                Id = new Guid("74DBE707-AB60-4FC7-84B3-C8F387BEEBB3"),
+                Title = "Hobbie",
 				EncodedTitle = "Hobbie",
 				Enabled = true,
 			});
 
 			SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Languages",
+                Id = new Guid("0AAB209A-AC78-4D5B-95E7-35777D0D9DB3"),
+                Title = "Languages",
 				EncodedTitle = "Languages",
 				Enabled = true,
 			});		
 			
 			SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Music",
+                Id = new Guid("90BE5DE8-B658-423A-B7C6-48ACEC0FA330"),
+                Title = "Music",
 				EncodedTitle = "Music",
 				Enabled = true,
 			});
 
 			var cookingCategoryId = SeedCategory(builder, new CategoryDataModel
 			{
-				Title = "Сooking",
+                Id = new Guid("55FCAF16-FA4B-40B0-8EE5-770E2EF3A5FE"),
+                Title = "Сooking",
 				EncodedTitle = "Сooking",
 				Enabled = true,
 			});
 
 			var roleId = SeedRole(builder);
 
-			var adminId = SeedUser(builder, "admin", "admin", "admin", "Administrator of this wonderful site. I’m also a .net developer and write about clean architecture, domain driven design.");
-			var martinId = SeedUser(builder, "marty", "Martin", "Fowler", "I am Martin Fowler: an author, speaker… essentially a loud-mouthed pundit on the topic of software development, primarily for Enterprise Applications");
+			var adminId = SeedUser(builder, new Guid("F142DC98-4019-460D-A647-07C71916A596"), "admin", "admin", "admin", "Administrator of this wonderful site. I’m also a .net developer and write about clean architecture, domain driven design.");
+			var martinId = SeedUser(builder, new Guid("84BCBF0F-5FA9-42D6-A043-28B438A66A88"), "marty", "Martin", "Fowler", "I am Martin Fowler: an author, speaker… essentially a loud-mouthed pundit on the topic of software development, primarily for Enterprise Applications");
 
 
 			SeedPost(builder, new List<Guid> { cookingCategoryId}, new PostDataModel{
+				Id = new Guid("5B5264AE-B7D6-468D-AB25-7A0C6459F889"),
 				Title = "Ukrainian Red Borscht Soup",
 				UserId = adminId,
 				PostStatus = PostStatus.Published,
@@ -125,7 +133,8 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedPost(builder, new List<Guid> { hobbieCatId }, new PostDataModel
 			{
-				Title = "Implementing Event Sourcing",
+                Id = new Guid("62A37D63-B02A-4A2B-8B27-ED42AC3E6C4C"),
+                Title = "Implementing Event Sourcing",
 				UserId = adminId,
 				PostStatus = PostStatus.Hidden,
 				TitleSlugify = "implementing-event-sourcing",
@@ -136,7 +145,8 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedPost(builder, new List<Guid> { hobbieCatId }, new PostDataModel
 			{
-				Title = "API Design 101: Best Practices",
+                Id = new Guid("A6470270-A886-4CBB-B5DF-FFC779EE1DC9"),
+                Title = "API Design 101: Best Practices",
 				UserId = adminId,
 				PostStatus = PostStatus.Published,
 				TitleSlugify = "api-design-101-from-basics-to-best-practices",
@@ -147,7 +157,8 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedPost(builder, new List<Guid> { hobbieCatId }, new PostDataModel
 			{
-				Title = ".NET/C# Fundamentals for Senior Devs",
+                Id = new Guid("EC5F0508-BA97-471D-ABAE-101D885AB075"),
+                Title = ".NET/C# Fundamentals for Senior Devs",
 				UserId = adminId,
 				PostStatus = PostStatus.Published,
 				TitleSlugify = "net-fundamentals-for-senior-devs",
@@ -158,10 +169,11 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedPost(builder, new List<Guid> { hobbieCatId }, new PostDataModel
 			{
-				Title = "Implementing Event Sourcing",
+                Id = new Guid("AAC2E4E5-4372-4571-9BB7-9F3918D02013"),
+                Title = "Implementing Event Sourcing",
 				UserId = adminId,
 				PostStatus = PostStatus.Draft,
-				TitleSlugify = "implementing-event-sourcing",
+				TitleSlugify = "AAC2E4E5-4372-4571-9BB7-9F3918D02013",
 				Slug = "implementing-event-sourcing-2",
 				ContentText = "Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design.\r\n\r\nBasic CQRS Representation\r\n\r\nIn this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions.\r\n\r\nIntroduction to Event Sourcing\r\n\r\nEvent Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state.\r\n\r\n\r\n\r\n\r\nWhat is CQRS?\r\n\r\nCommand Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.\r\n\r\nBenefits of Event Sourcing and CQRS in Microservices\r\n\r\nThe combination of Event Sourcing and CQRS offers several advantages when applied to microservices-based applications:\r\n\r\n\r\n\r\n\r\nHistorical Transparency: Event Sourcing ensures a comprehensive record of all state changes, providing historical transparency for auditing, compliance, and debugging purposes.\r\nFlexibility in Query Optimization: CQRS empowers you to optimize read and write paths differently. This means you can tailor the read path for query performance while optimizing the write path for high throughput.\r\nScalability and Performance: Microservices architectures demand efficient scaling. Event Sourcing and CQRS allow you to scale different parts of your application independently, enhancing overall performance.\r\nResilience and Fault Tolerance: Event Sourcing enhances resilience by allowing the reconstruction of application state after a failure. CQRS helps isolate errors and failures in the write path from affecting the read path.\r\nSupport for Complex Domains: Event Sourcing allows you to capture complex domain behavior accurately by recording fine-grained events. CQRS then enables tailored views of this data for various use cases.\r\nGetting Started with ASP.NET Core Microservices\r\n\r\nSetting the Foundation: Creating an ASP.NET Core Microservices Solution\r\n\r\n\r\n\r\n\r\nTo implement Event Sourcing and Command Query Responsibility Segregation (CQRS) in ASP.NET Core microservices, you’ll first need to set up your development environment and create the necessary solution structure. Here’s a step-by-step guide to get you started:\r\n\r\n1. Install .NET Core SDK: Make sure you have the latest .NET Core SDK installed on your machine. You can download it from the official Microsoft website.\r\n\r\n2. Create a New Solution: Open your command-line interface and navigate to the directory where you want to create your solution. Use the following command to create a new ASP.NET Core solution:\r\n\r\ndotnet new sln -n MicroservicesSolution\r\n\r\n\r\n3. Create Microservices Projects: Inside your solution folder, create individual projects for each microservice. For example, you can create projects named OrderService, PaymentService, and NotificationService:\r\n\r\ndotnet new webapi -n OrderService\r\ndotnet new webapi -n PaymentService\r\ndotnet new webapi -n NotificationService\r\n\r\n\r\n4. Add Projects to Solution: Add the microservices projects to the solution using the following command:\r\n\r\ndotnet sln MicroservicesSolution.sln add OrderService\\OrderService.csproj\r\ndotnet sln MicroservicesSolution.sln add PaymentService\\PaymentService.csproj\r\ndotnet sln MicroservicesSolution.sln add NotificationService\\NotificationService.csproj\r\n\r\nDefining Domain Events and Commands\r\n\r\nWith your solution structure in place, you’re ready to define the core building blocks of Event Sourcing and CQRS: domain events and commands.\r\n\r\n\r\n\r\n\r\nCreate a Shared Library: To avoid duplicating domain-related code, create a shared library that contains common classes like domain events, commands, and value objects. Use the following command to create a class library project:\r\n\r\n\r\n\r\n\r\ndotnet new classlib -n SharedDomain\r\n\r\nAdd the Shared Library to Solution: Add the shared library project to the solution:\r\n\r\n\r\n\r\n\r\ndotnet sln MicroservicesSolution.sln add SharedDomain\\SharedDomain.csproj\r\n\r\nDefine Domain Events and Commands: Inside the SharedDomain project, define your domain events and commands as C# classes. For example:\r\n\r\n\r\n\r\n\r\npublic class OrderPlacedEvent\r\n{\r\n    public Guid OrderId { get; set; }\r\n    public DateTime Timestamp { get; set; }\r\n}\r\n\r\npublic class ProcessPaymentCommand\r\n{\r\n    public Guid OrderId { get; set; }\r\n    public decimal Amount { get; set; }\r\n}\r\n\r\nReference the Shared Library: In each microservice project, add a reference to the SharedDomain library:\r\n\r\n\r\n\r\n\r\ndotnet add OrderService\\OrderService.csproj reference SharedDomain\\SharedDomain.csproj\r\ndotnet add PaymentService\\PaymentService.csproj reference SharedDomain\\SharedDomain.csproj\r\ndotnet add NotificationService\\NotificationService.csproj reference SharedDomai\r\n\r\n\r\n\r\n",
 				ContentHTML = "<p>Event Sourcing and Command Query Responsibility Segregation (CQRS) have emerged as powerful architectural patterns to address the complexities of microservices design.</p><p>Basic CQRS Representation</p><p>In this article, we’ll explore how ASP.NET Core empowers you to integrate Event Sourcing and CQRS seamlessly into your microservices ecosystem. By understanding their fundamentals, practical implementation, and tools available, you’ll be well-equipped to architect robust and efficient microservices solutions.</p><h1>Introduction to Event Sourcing</h1><p>Event Sourcing, at its core, is a data storage pattern that captures every change to an application’s state as a sequence of immutable events. Unlike traditional approaches that store only the current state, Event Sourcing maintains a full history of state changes. This technique not only enables you to reconstruct the application’s past states but also provides an audit trail of how and why the system arrived at its current state.</p><p><br></p><h1>What is CQRS?</h1><p>Command Query Responsibility Segregation (CQRS) is a pattern that separates the read and write operations of a system into distinct paths. In a CQRS architecture, commands represent requests to change the system’s state, while queries fetch data for reading purposes. By segregating these concerns, CQRS allows optimization of each path independently, enabling efficient scaling, performance tuning, and enhanced user experiences.</p><h2>Benefits of Event Sourcing and CQRS in Microservices</h2><p>The combination of Event Sourcing and CQRS offers several advantages when applied to microservices-based applications:</p><p><br></p><ol><li><strong>Historical Transparency:</strong>&nbsp;Event Sourcing ensures a comprehensive record of all state changes, providing historical transparency for auditing, compliance, and debugging purposes.</li><li><strong>Flexibility in Query Optimization:</strong>&nbsp;CQRS empowers you to optimize read and write paths differently. This means you can tailor the read path for query performance while optimizing the write path for high throughput.</li><li><strong>Scalability and Performance:</strong>&nbsp;Microservices architectures demand efficient scaling. Event Sourcing and CQRS allow you to scale different parts of your application independently, enhancing overall performance.</li><li><strong>Resilience and Fault Tolerance:</strong>&nbsp;Event Sourcing enhances resilience by allowing the reconstruction of application state after a failure. CQRS helps isolate errors and failures in the write path from affecting the read path.</li><li><strong>Support for Complex Domains:</strong>&nbsp;Event Sourcing allows you to capture complex domain behavior accurately by recording fine-grained events. CQRS then enables tailored views of this data for various use cases.</li></ol><h2>Getting Started with ASP.NET Core Microservices</h2><p>Setting the Foundation: Creating an ASP.NET Core Microservices Solution</p><p><br></p><p>To implement Event Sourcing and Command Query Responsibility Segregation (CQRS) in ASP.NET Core microservices, you’ll first need to set up your development environment and create the necessary solution structure. Here’s a step-by-step guide to get you started:</p><p><strong>1. Install .NET Core SDK:</strong>&nbsp;Make sure you have the latest .NET Core SDK installed on your machine. You can download it from the official&nbsp;<a href=\"https://dotnet.microsoft.com/download\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\">Microsoft website</a>.</p><p><strong>2. Create a New Solution:&nbsp;</strong>Open your command-line interface and navigate to the directory where you want to create your solution. Use the following command to create a new ASP.NET Core solution:</p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet new sln -n MicroservicesSolution\r\n</pre><p><strong>3. Create Microservices Projects:</strong>&nbsp;Inside your solution folder, create individual projects for each microservice. For example, you can create projects named&nbsp;<code style=\"background-color: rgb(242, 242, 242);\">OrderService</code>,&nbsp;<code style=\"background-color: rgb(242, 242, 242);\">PaymentService</code>, and&nbsp;<code style=\"background-color: rgb(242, 242, 242);\">NotificationService</code>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet new webapi -n OrderService\r\ndotnet new webapi -n PaymentService\r\ndotnet new webapi -n NotificationService\r\n</pre><p><strong>4. Add Projects to Solution:</strong>&nbsp;Add the microservices projects to the solution using the following command:</p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet sln MicroservicesSolution.sln add OrderService\\OrderService.csproj\r\ndotnet sln MicroservicesSolution.sln add PaymentService\\PaymentService.csproj\r\ndotnet sln MicroservicesSolution.sln add NotificationService\\NotificationService.csproj\r\n</pre><h2>Defining Domain Events and Commands</h2><p>With your solution structure in place, you’re ready to define the core building blocks of Event Sourcing and CQRS: domain events and commands.</p><p><br></p><ul><li><strong>Create a Shared Library:</strong>&nbsp;To avoid duplicating domain-related code, create a shared library that contains common classes like domain events, commands, and value objects. Use the following command to create a class library project:</li></ul><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet new classlib -n SharedDomain\r\n</pre><ul><li><strong>Add the Shared Library to Solution:</strong>&nbsp;Add the shared library project to the solution:</li></ul><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet sln MicroservicesSolution.sln add SharedDomain\\SharedDomain.csproj\r\n</pre><ul><li><strong>Define Domain Events and Commands:</strong>&nbsp;Inside the&nbsp;<code style=\"background-color: rgb(242, 242, 242);\">SharedDomain</code>&nbsp;project, define your domain events and commands as C# classes. For example:</li></ul><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">public class OrderPlacedEvent\r\n{\r\n    public Guid OrderId { get; set; }\r\n    public DateTime Timestamp { get; set; }\r\n}\r\n\r\npublic class ProcessPaymentCommand\r\n{\r\n    public Guid OrderId { get; set; }\r\n    public decimal Amount { get; set; }\r\n}\r\n</pre><ul><li><strong>Reference the Shared Library:</strong>&nbsp;In each microservice project, add a reference to the&nbsp;<code style=\"background-color: rgb(242, 242, 242);\">SharedDomain</code>&nbsp;library:</li></ul><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">dotnet add OrderService\\OrderService.csproj reference SharedDomain\\SharedDomain.csproj\r\ndotnet add PaymentService\\PaymentService.csproj reference SharedDomain\\SharedDomain.csproj\r\ndotnet add NotificationService\\NotificationService.csproj reference SharedDomai\r\n</pre><p><br></p>"
@@ -169,7 +181,8 @@ namespace BlogFest.Infrastructure.Persistance
 
 			SeedPost(builder, new List<Guid> { hobbieCatId }, new PostDataModel
 			{
-				Title = "The Architecture of a Modern Startup",
+                Id = new Guid("766B7995-DD2C-42D3-B2AA-9B75DE70A818"),
+                Title = "The Architecture of a Modern Startup",
 				UserId = martinId,
 				PostStatus = PostStatus.Published,
 				TitleSlugify = "the-architecture-of-a-modern-startup",
@@ -182,15 +195,12 @@ namespace BlogFest.Infrastructure.Persistance
 		}
 		private void SeedPost(ModelBuilder builder, List<Guid> categories, PostDataModel post)
 		{
-			var id = Guid.NewGuid();
-			post.Id = id;
-
 			var catPost = categories.Select(x => new CategoryPostDataModel
 			{
 				Id = Guid.NewGuid(),
 				CategoryId = x,
-				PostId = id
-			}).ToList();
+				PostId = post.Id
+            }).ToList();
 
 			builder.Entity<CategoryPostDataModel>().HasData(catPost);
 
@@ -207,7 +217,7 @@ namespace BlogFest.Infrastructure.Persistance
 
 		private Guid SeedRole(ModelBuilder builder)
 		{
-			var roleId = Guid.NewGuid();
+			var roleId = new Guid("3E0AFAA8-F82A-4B2B-8763-C54733AA423F");
 			builder.Entity<AuthIdentityRole>().HasData(new AuthIdentityRole
 			{
 				Name = "Admin",
@@ -223,7 +233,7 @@ namespace BlogFest.Infrastructure.Persistance
 		{
 			builder.Entity<FileDataModel>().HasData(new FileDataModel
 			{
-				Id = Guid.NewGuid(),
+				Id = new Guid("CFA390BF-0B35-4B13-9BE9-5F439DD11687"),
 				Path = "Images\\default-user-img.jpeg",
 				Name = "Default-Image",
 				Type = MediaTypes.ProfilePhoto
@@ -231,8 +241,8 @@ namespace BlogFest.Infrastructure.Persistance
 
 			builder.Entity<FileDataModel>().HasData(new FileDataModel
 			{
-				Id = Guid.NewGuid(),
-				Path = "Images\\default-image-title-preview.jpg",
+                Id = new Guid("A7EFE72C-314B-4331-82CD-10DBA83A2286"),
+                Path = "Images\\default-image-title-preview.jpg",
 				Name = "Default-image-title-preview",
 				Type = MediaTypes.ImageTitlePreview
 			});
@@ -250,16 +260,15 @@ namespace BlogFest.Infrastructure.Persistance
 
 		private Guid SeedCategory(ModelBuilder builder, CategoryDataModel category)
 		{
-			var id = Guid.NewGuid();
-			category.Id = id;
+			if (category.Id == Guid.Empty) throw new NullReferenceException("Category Id should be not empty"); 
+
 			builder.Entity<CategoryDataModel>().HasData(category);
-			return id;
+			return category.Id;
 		}
 
 
-		private Guid SeedUser(ModelBuilder builder, string name, string firstName = "", string lastName = "", string bio = "", string email = "")
+		private Guid SeedUser(ModelBuilder builder, Guid id, string name, string firstName = "", string lastName = "", string bio = "", string email = "")
 		{
-			var id = Guid.NewGuid();
 			var user = new UserModel
 			{
 				Id = id,
