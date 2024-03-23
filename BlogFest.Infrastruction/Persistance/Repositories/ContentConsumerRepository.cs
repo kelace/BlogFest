@@ -1,19 +1,11 @@
 ﻿using BlogFest.Data;
 using BlogFest.Infrastruction.Persistance.DataModels;
-using BlogFest.Infrastruction.Persistance.Factories;
 using BlogFest.Infrastructure.Persistance;
 using MediatR;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using BlogFest.Domain.Content.ContentConsuming;
-using BlogFest.Domain.Content.ContentCreating;
 using BlogFest.Infrastruction.Persistance.Factories.Content;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace BlogFest.Infrastruction.Persistance.Repositories
 {
@@ -21,15 +13,11 @@ namespace BlogFest.Infrastruction.Persistance.Repositories
     {
         ApplicationDbContext _context;
         IDomainEventStorage _eventSrorage;
-        IMediator _mediator;
-        IMemoryCache _memoryCache;
 
-        public ContentConsumerRepository(ApplicationDbContext context, IDomainEventStorage eventSrorage, IMediator mediator, IMemoryCache memoryCache)
+        public ContentConsumerRepository(ApplicationDbContext context, IDomainEventStorage eventSrorage)
         {
             _context = context;
             _eventSrorage = eventSrorage;
-            _mediator = mediator;
-            _memoryCache = memoryCache;
         }
 
         public async Task<ContentConsumer> GetContentConsumerById(Guid id, Guid postId)
@@ -99,29 +87,13 @@ namespace BlogFest.Infrastruction.Persistance.Repositories
                             new SqlParameter("@DateCreated", DateTime.UtcNow),
                     };
 
-                    try
-                    {
-                        await _context.Database.ExecuteSqlRawAsync($@"
+                    await _context.Database.ExecuteSqlRawAsync($@"
 
-                            Insert Into [dbo].[Comments] (Id, Content, UserId, PostId, DateCreated)
-                            Values(@Id, @Content, @UserId, @PostId, @DateCreated)", paramItems
+                        Insert Into [dbo].[Comments] (Id, Content, UserId, PostId, DateCreated)
+                        Values(@Id, @Content, @UserId, @PostId, @DateCreated)", paramItems
 
-                        );
-                    }
-                    catch (Exception ex)
-                    {
-
-                        throw;
-                    }
+                    );
                 }
-            }
-        }
-
-        private void RefreshCacheBySlug(string slug)
-        {
-            if (_memoryCache.TryGetValue($"post-{slug}", out var value))
-            {
-                _memoryCache.Remove(slug);
             }
         }
     }
